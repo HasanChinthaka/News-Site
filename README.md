@@ -1,7 +1,6 @@
 News App
 ---
 This application was created by using React js<br>
-<a href="news-app.infinityfreeapp.com">Demo</a>
 
 Technology & Tools
 ---
