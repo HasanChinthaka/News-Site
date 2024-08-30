@@ -19,7 +19,7 @@ How to run in local
 ---
 <br>
 <ol></ol>
-  <li><a href="https://github.com/HasanChinthaka/Vue_JS_CRUD_APP/archive/refs/heads/main.zip">Download</a> or <a href="https://github.com/HasanChinthaka/Vue_JS_CRUD_APP.git">clone</a> repository</li>
+  <li><a href="https://github.com/HasanChinthaka/News-Site/archive/refs/heads/main.zip">Download</a> or <a href="https://github.com/HasanChinthaka/News-Site.git">clone</a> repository</li>
   <li>If you clone the repository, go to the local repository folder (if you download unzip the repository and go to the folder)</li>
   <li>Open the <b>news_site</b> folder in your using a text editor</li>
   <li>Type the command below in the text editor terminal</li><br>
