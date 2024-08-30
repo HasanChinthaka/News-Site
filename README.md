@@ -5,7 +5,7 @@ Demo - <a></a>
 
 Technology & Tools
 ---
-<a href="https://react.dev/"><img alt="React Js" src="https://img.shields.io/badge/react.js-black?logo=react&logoColor=blue&labelColor=black"></a>
+<a href="https://react.dev/"><img alt="React Js" src="https://img.shields.io/badge/React%20Js%20-%20%235ad4f6.svg?logo=react&logoColor=white"></a>
 <a href="https://getbootstrap.com/"><img alt="Bootstrap" src="https://img.shields.io/badge/Bootstrap-8311f9.svg?logo=bootstrap&logoColor=white"></a>
 
 Specification
