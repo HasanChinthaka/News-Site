@@ -16,7 +16,7 @@ const NewsBoard = ({ category, language}) => {
 
       try {
         // Base URL
-        let url = `https://newsapi.org/v2/everything?apiKey=a2839d44b4fa44239579d0da69749d1d`;
+        let url = `https://newsapi.org/v2/everything?apiKey=${import.meta.env.VITE_APP_API_KEY}`;
 
         // Add category if not 'all'
         if (category && category !== "general") {
