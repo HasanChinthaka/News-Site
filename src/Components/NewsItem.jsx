@@ -36,7 +36,7 @@ const NewsItem = ({ title, description, src, url, publishedAt, author }) => {
         </p>
         <p className="card-subtitle text-light">
           {/* {publishedAt ? publishedAt.slice(0, 90) : " "} */}
-          {date}{time}
+          {date}
         </p>
         <p className="card-subtitle mb-4 text-light">
           {/* {publishedAt ? publishedAt.slice(0, 90) : " "} */}
