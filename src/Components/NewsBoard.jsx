@@ -9,14 +9,15 @@ const NewsBoard = ({ category, language}) => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    useEffect(() => {        
+    useEffect(() => {    
+      api_key = "a2839d44b4fa44239579d0da69749d1d"    
     const getArticles = async () => {
       setIsLoading(true);
       setError(null);
 
       try {
         // Base URL
-        let url = `https://newsapi.org/v2/everything?apiKey=${import.meta.env.VITE_APP_API_KEY}`;
+        let url = `https://newsapi.org/v2/everything?apiKey=${api_key}`;
 
         // Add category if not 'all'
         if (category && category !== "general") {
