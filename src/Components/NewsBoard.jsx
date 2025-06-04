@@ -4,28 +4,44 @@ import errorimg from "../assets/error.png";
 import loading from "../assets/loading.gif";
 import NewsItem from "./NewsItem";
 
-const NewsBoard = ({ category, language }) => {
+const NewsBoard = ({ category, language}) => {
     const [articles, setArticles] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    useEffect(() => {
-        const getArticles = async () => {
-            setIsLoading(true)
-            setError(null)
-            try {
-                const response = await axios.get(`https://newsapi.org/v2/everything?q=${category}&apiKey=a2839d44b4fa44239579d0da69749d1d`)
-                console.log(response);
-                setArticles(response.data.articles)
-            } catch (error) {
-                console.error('Error fetching articles:', error);
-                setError('An error occurred while fetching articles');
-            } finally {
-                setIsLoading(false);
-            }
+    useEffect(() => {        
+    const getArticles = async () => {
+      setIsLoading(true);
+      setError(null);
+
+      try {
+        // Base URL
+        let url = `https://newsapi.org/v2/everything?apiKey=${import.meta.env.VITE_APP_API_KEY}`;
+
+        // Add category if not 'all'
+        if (category && category !== "general") {
+          url += `&q=${category}`;
+        } else {
+          url += `&q=news`; // fallback query for 'all'
         }
-        getArticles()
-    }, [category])
+
+        // Add language if not 'all'
+        if (language && language !== "general") {
+          url += `&language=${language}`;
+        }
+        
+        const response = await axios.get(url);
+        setArticles(response.data.articles);
+      } catch (error) {
+        console.error("Error fetching articles:", error);
+        setError("An error occurred while fetching articles");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    getArticles();
+  }, [category, language]);
     return (
         <div>
             <h2 className="text-center py-4" style={{ fontSize: 44, fontWeight: '600' }}>Latest <span className="badge bg-danger">News</span></h2>
@@ -41,7 +57,7 @@ const NewsBoard = ({ category, language }) => {
                     <p>{error}</p>
                 </div>
             ) : (
-                <ul>
+                <div>
                     {articles.map((news, index) => {
                         return <NewsItem
                             key={index}
@@ -53,7 +69,7 @@ const NewsBoard = ({ category, language }) => {
                             author={news.author}
                         />
                     })}
-                </ul>
+                </div>
             )
             }
         </div>
